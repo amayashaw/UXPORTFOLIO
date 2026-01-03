@@ -4,17 +4,35 @@
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
 
     --color-sage-50: #f4f7f4;
-    --color-sage-400: #87a68d; /* Add this line! */
+    --color-sage-400: #87a68d;
     --color-sage-500: #6b8e73;
     --color-sage-600: #54715a;
     --color-sage-700: #455c4a;
 }
 
-/* This helps remove the default browser blue "halo" */
+/* Base styles for form elements */
 @layer base {
   input, textarea {
     @apply outline-none;
   }
+}
+
+/* Custom Components for consistency */
+@layer components {
+    /* Style for the active page in navigation */
+    .nav-link-active {
+        @apply text-sage-600 font-semibold border-b-2 border-sage-500;
+    }
+
+    /* Standardized button for "View Project" links */
+    .btn-primary {
+        @apply inline-block px-6 py-2 bg-sage-500 text-white rounded-lg transition-colors duration-300 hover:bg-sage-600 no-underline text-sm font-medium;
+    }
+
+    /* Style for the "Upcoming" project placeholder cards */
+    .card-upcoming {
+        @apply border-2 border-dashed border-gray-200 rounded-xl p-8 text-center bg-gray-50 opacity-70;
+    }
 }
 
 @source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";

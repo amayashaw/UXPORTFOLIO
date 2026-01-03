@@ -5,41 +5,29 @@
 @section('content')
 <main class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-8 text-gray-800">Webpage Redesigns</h1>
-    <p class="mb-10 text-xl text-gray-600">Explore projects where I identified user experience issues on existing websites and designed solutions to improve usability and conversion.</p>
+    <p class="mb-10 text-xl text-gray-600">Identifying user experience issues and designing solutions to improve usability.</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {{-- PROJECT CARD 1: Major Website Overhaul --}}
-        <a href="#" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 overflow-hidden">
-            <img class="w-full h-48 object-cover" src="path/to/image/redesign_1.jpg" alt="E-commerce Checkout Redesign">
+        
+        {{-- PROJECT CARD 1: San Diego Coupons --}}
+        <a href="{{ route('san-diego-coupons') }}" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 overflow-hidden">
+            <img class="w-full h-48 object-cover" src="{{ asset('photos/web/web1/profile.png') }}" alt="San Diego Coupons Redesign">
             <div class="p-6">
-                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full uppercase mb-2">E-Commerce UX</span>
-                <h2 class="text-2xl font-semibold text-gray-800 mb-2">E-commerce Checkout Flow Redesign</h2>
-                <p class="text-gray-600">Reduced cart abandonment by 25% through simplified steps and clearer information hierarchy.</p>
-                <p class="mt-4 text-indigo-600 font-medium hover:text-indigo-800">View Project →</p>
+                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full uppercase mb-2">HCI Lab</span>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-2">San Diego Coupons</h2>
+                <p class="text-gray-600">Improving learning and familiarity by reorganizing the site's navigation hierarchy.</p>
+                <p class="mt-4 text-sage-500 font-medium">View Project →</p>
             </div>
         </a>
 
-        {{-- PROJECT CARD 2: App Feature Enhancement --}}
-        <a href="#" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 overflow-hidden">
-            <img class="w-full h-48 object-cover" src="path/to/image/redesign_2.jpg" alt="News Feed Filtering Improvement">
-            <div class="p-6">
-                <span class="inline-block bg-pink-100 text-pink-800 text-xs font-semibold px-3 py-1 rounded-full uppercase mb-2">Mobile App UX</span>
-                <h2 class="text-2xl font-semibold text-gray-800 mb-2">News App Filtering and Personalization</h2>
-                <p class="text-gray-600">Improved user retention by allowing granular control over feed content based on user preference data.</p>
-                <p class="mt-4 text-indigo-600 font-medium hover:text-indigo-800">View Project →</p>
-            </div>
-        </a>
+        {{-- Upcoming Cards --}}
+        <div class="bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center min-h-[400px]">
+            <h2 class="text-xl font-semibold text-gray-400 uppercase tracking-widest">Upcoming</h2>
+        </div>
+        <div class="bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center min-h-[400px]">
+            <h2 class="text-xl font-semibold text-gray-400 uppercase tracking-widest">Upcoming</h2>
+        </div>
 
-        {{-- PROJECT CARD 3: Corporate Site Usability --}}
-        <a href="#" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 overflow-hidden">
-            <img class="w-full h-48 object-cover" src="path/to/image/redesign_3.jpg" alt="B2B Dashboard Overhaul">
-            <div class="p-6">
-                <span class="inline-block bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1 rounded-full uppercase mb-2">B2B Platform</span>
-                <h2 class="text-2xl font-semibold text-gray-800 mb-2">Internal B2B Dashboard Usability Audit</h2>
-                <p class="text-gray-600">Simplified a complex data visualization dashboard to reduce employee onboarding time by 40%.</p>
-                <p class="mt-4 text-indigo-600 font-medium hover:text-indigo-800">View Project →</p>
-            </div>
-        </a>
     </div>
 </main>
 @endsection

@@ -13,7 +13,8 @@
                         sage: {
                             50: '#f4f7f4',
                             100: '#e7ede7',
-                            500: '#8ca38c', // Your Sage Green
+                            400: '#87a68d',
+                            500: '#8ca38c', 
                             600: '#7a8f7a',
                         }
                     }
@@ -24,6 +25,42 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        /* Component: Active Navigation Link */
+        .nav-active {
+            color: #8ca38c !important; /* sage-500 */
+            border-bottom: 2px solid #8ca38c;
+            padding-bottom: 4px;
+        }
+
+        /* Component: Project Button (For Case Studies/Graphic Design pages) */
+        .btn-project {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #8ca38c;
+            color: white;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-project:hover {
+            background-color: #7a8f7a;
+            transform: translateY(-2px);
+        }
+
+        /* Component: Upcoming Project Card */
+        .card-upcoming {
+            border: 2px dashed #e5e7eb;
+            background-color: #f9fafb;
+            border-radius: 1rem;
+            padding: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900 flex flex-col min-h-screen">
@@ -32,18 +69,18 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-20">
                 
-                {{-- LOGO - Restored to Sage Green --}}
+                {{-- LOGO --}}
                 <a href="/" class="text-2xl font-black tracking-tighter text-sage-500 uppercase">
                     Amaya Shaw
                 </a>
 
                 {{-- DESKTOP MENU --}}
-                <div class="hidden md:flex space-x-8 uppercase text-xs font-bold tracking-widest text-gray-500">
-                    <a href="{{ route('case-studies') }}" class="hover:text-sage-500 transition">Case Studies</a>
-                    <a href="{{ route('graphic-design') }}" class="hover:text-sage-500 transition">Graphic Design</a>
-                    <a href="{{ route('webpage-redesign') }}" class="hover:text-sage-500 transition">Webpage Redesign</a>
-                    <a href="{{ route('personal-projects') }}" class="hover:text-sage-500 transition">Personal Projects</a>
-                    <a href="{{ route('contact') }}" class="hover:text-sage-500 transition">Contact Me</a>
+                <div class="hidden md:flex space-x-8 uppercase text-xs font-bold tracking-widest items-center">
+                    <a href="{{ route('case-studies') }}" class="{{ request()->routeIs('case-studies') ? 'nav-active' : 'text-gray-500' }} hover:text-sage-500 transition">Case Studies</a>
+                    <a href="{{ route('graphic-design') }}" class="{{ request()->routeIs('graphic-design') ? 'nav-active' : 'text-gray-500' }} hover:text-sage-500 transition">Graphic Design</a>
+                    <a href="{{ route('webpage-redesign') }}" class="{{ request()->routeIs('webpage-redesign') ? 'nav-active' : 'text-gray-500' }} hover:text-sage-500 transition">Webpage Redesign</a>
+                    <a href="{{ route('personal-projects') }}" class="{{ request()->routeIs('personal-projects') ? 'nav-active' : 'text-gray-500' }} hover:text-sage-500 transition">Personal Projects</a>
+                    <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'nav-active' : 'text-gray-500' }} hover:text-sage-500 transition">Contact Me</a>
                 </div>
 
                 {{-- MOBILE HAMBURGER BUTTON --}}
@@ -58,11 +95,11 @@
 
             {{-- MOBILE MENU DROPDOWN --}}
             <div id="mobile-menu" class="hidden md:hidden pb-6 space-y-4 uppercase text-center font-bold tracking-widest text-gray-600 text-sm">
-                <a href="{{ route('case-studies') }}" class="block py-2 border-b border-gray-50">Case Studies</a>
-                <a href="{{ route('graphic-design') }}" class="block py-2 border-b border-gray-50">Graphic Design</a>
-                <a href="{{ route('webpage-redesign') }}" class="block py-2 border-b border-gray-50">Webpage Redesign</a>
-                <a href="{{ route('personal-projects') }}" class="block py-2 border-b border-gray-50">Personal Projects</a>
-                <a href="{{ route('contact') }}" class="block py-2">Contact Me</a>
+                <a href="{{ route('case-studies') }}" class="block py-2 border-b border-gray-50 {{ request()->routeIs('case-studies') ? 'text-sage-500' : '' }}">Case Studies</a>
+                <a href="{{ route('graphic-design') }}" class="block py-2 border-b border-gray-50 {{ request()->routeIs('graphic-design') ? 'text-sage-500' : '' }}">Graphic Design</a>
+                <a href="{{ route('webpage-redesign') }}" class="block py-2 border-b border-gray-50 {{ request()->routeIs('webpage-redesign') ? 'text-sage-500' : '' }}">Webpage Redesign</a>
+                <a href="{{ route('personal-projects') }}" class="block py-2 border-b border-gray-50 {{ request()->routeIs('personal-projects') ? 'text-sage-500' : '' }}">Personal Projects</a>
+                <a href="{{ route('contact') }}" class="block py-2 {{ request()->routeIs('contact') ? 'text-sage-500' : '' }}">Contact Me</a>
             </div>
         </div>
     </nav>
@@ -78,10 +115,14 @@
                 <p class="text-gray-400 text-sm tracking-wide">UX/UI Designer & Visual Storyteller</p>
             </div>
             
-            <div class="flex justify-center space-x-8 mb-10 text-xs font-bold tracking-widest text-gray-500 uppercase">
-                <a href="{{ route('graphic-design') }}" class="hover:text-sage-500 transition">Work</a>
+            <div class="flex justify-center items-center space-x-4 mb-10 text-xs font-bold tracking-widest text-gray-500 uppercase">
+                <a href="/" class="hover:text-sage-500 transition">Work</a>
+                <span class="text-gray-200">|</span>
                 <a href="{{ route('contact') }}" class="hover:text-sage-500 transition">Contact</a>
+                <span class="text-gray-200">|</span>
                 <a href="https://www.linkedin.com/in/amaya-shaw/" target="_blank" class="hover:text-sage-500 transition">LinkedIn</a>
+                <span class="text-gray-200">|</span>
+                <a href="https://github.com/amayashaw" target="_blank" class="hover:text-sage-500 transition">GitHub</a>
             </div>
 
             <div class="pt-8 border-t border-gray-50">

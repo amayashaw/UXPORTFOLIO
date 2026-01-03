@@ -5,7 +5,7 @@
 @section('content')
 <main class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-8 text-gray-800">Personal Projects</h1>
-    <p class="mb-10 text-xl text-gray-600">A collection of self-initiated projects, UX challenges, and explorations demonstrating my passion and skill outside of formal client work.</p>
+    <p class="mb-10 text-xl text-gray-600">A collection of self-initiated projects, UX challenges, and explorations demonstrating my passion and skill outside of formal work.</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
