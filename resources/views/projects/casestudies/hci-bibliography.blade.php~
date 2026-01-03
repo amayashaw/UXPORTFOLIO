@@ -1,0 +1,145 @@
+@extends('layouts.app')
+
+@section('title', 'HCI Bibliography: Safety Redesign')
+
+@section('content')
+<main class="container mx-auto px-4 py-12 max-w-5xl">
+    
+    {{-- Breadcrumb --}}
+    <nav class="mb-8 text-sm uppercase tracking-widest font-bold">
+        <a href="{{ route('case-studies') }}" class="text-sage-500 hover:text-sage-600 transition">← Back to Case Studies</a>
+    </nav>
+
+    {{-- Project Header --}}
+    <header class="mb-16">
+        <h1 class="text-5xl font-black text-gray-900 mb-6 uppercase tracking-tighter leading-none">HCI Bibliography:<br>Safety Redesign</h1>
+        <p class="text-xl text-gray-500 leading-relaxed italic">
+            A deep-dive into the "Safety" interaction principle to resurrect a historic HCI resource through intentional redesign.
+        </p>
+    </header>
+
+    {{-- Section: Intro & Scenario --}}
+    <section class="mb-20">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-sage-100 pb-2">The Mission</h2>
+        <div class="prose prose-lg text-gray-600 space-y-4">
+            <p>
+                Throughout the semester, we explored how functionality and usability impact the overall User Experience (UX). For this final project, the goal was to synthesize these concepts to redesign the 
+                <a href="https://hcibib.org/" target="_blank" class="font-bold text-blue-600 hover:underline">HCI Bibliography</a> 
+                website.
+            </p>
+            <p>
+                While the site was a central hub for researchers, its design had not been updated since 2018. As an HCI student, I identified specific violations of the <strong>Safety</strong> principle and redesigned components to restore user control and efficiency.
+            </p>
+        </div>
+    </section>
+
+    {{-- The Principle Definition --}}
+    <div class="bg-sage-50 p-8 rounded-3xl mb-24 border border-sage-100">
+        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-sage-600 mb-4">The Core Principle</h3>
+        <p class="text-2xl font-semibold text-gray-800 leading-snug">
+            "Safety is the idea of protecting users from making errors and providing them with the means to recover from them." 
+        </p>
+        <p class="mt-4 text-sm text-gray-400 font-bold">— Sidas Saulynas (2025)</p>
+    </div>
+
+    {{-- NARRATIVE: VIOLATION & REDESIGN PAIRS --}}
+    <div class="space-y-32">
+
+        {{-- SECTION 1: HOMEPAGE (2 Violations, 1 Redesign) --}}
+        <article>
+            <div class="mb-8">
+                <span class="text-sage-500 font-black text-4xl">01</span>
+                <h3 class="text-2xl font-bold text-gray-900 mt-2">Homepage: Mapping & Error Traps</h3>
+            </div>
+            
+            <div class="space-y-8">
+                {{-- 2 Violation Images --}}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-3 rounded-xl shadow-inner border border-gray-100">
+                        <img src="{{ asset('photos/case/case1/1.jpg') }}" class="w-full rounded-lg shadow-sm" alt="Homepage Violation 1">
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-xl shadow-inner border border-gray-100">
+                        <img src="{{ asset('photos/case/case1/2.jpg') }}" class="w-full rounded-lg shadow-sm" alt="Homepage Violation 2">
+                    </div>
+                </div>
+                <p class="text-center text-xs text-gray-400 uppercase font-bold tracking-widest">Figure 1.1 & 1.2: Original Homepage Violations</p>
+
+                <div class="prose text-gray-600 max-w-none py-4 space-y-4">
+                    <p>
+                        In <strong>Figure 1.1</strong>, the "language-changing" buttons provide feedback linked to the wrong action, sending users to a URL translation page rather than translating the site. This represents a failure in <strong>Mapping</strong>—the attribute allowing users to predict interaction outcomes (Saulynas, 2025). This disconnect decreases feedback effectiveness and puts user safety at risk.
+                    </p>
+                    <p>
+                        In <strong>Figure 1.2</strong>, a search failure leaves the user at an unexplained dead end. A <strong>logical constraint</strong> should use reasoning to offer alternatives; however, the lack of recovery paths (like a "Back" or "Undo" button) traps the user in a dangerous condition, violating the safety goal.
+                    </p>
+                </div>
+
+                {{-- 1 Redesign Image --}}
+                <div class="bg-white p-4 rounded-2xl shadow-2xl border border-sage-50">
+                    <img src="{{ asset('photos/case/case1/5.jpg') }}" class="w-full rounded-xl" alt="Homepage Redesign">
+                    <p class="text-center text-xs text-sage-500 mt-4 uppercase font-bold tracking-widest">Figure 1.3: Integrated Homepage Redesign</p>
+                    <div class="prose text-gray-600 max-w-none mt-6">
+                        <p>
+                            The redesign replaces the dead end with a clear error message: <strong>“‘books’: not found. try searching again…”</strong> which uses <strong>logical constraints</strong> to guide the user toward the next reasonable action. This update preserves safety by providing actionable feedback and ensuring the navigation menu remains accessible for easy recovery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        {{-- SECTION 2: SECONDARY PAGE (2 Violations, 2 Redesigns) --}}
+        <article>
+            <div class="mb-8">
+                <span class="text-sage-500 font-black text-4xl">02</span>
+                <h3 class="text-2xl font-bold text-gray-900 mt-2">Secondary Page: Logical Constraints</h3>
+            </div>
+            
+            <div class="space-y-12">
+                {{-- 2 Violation Images --}}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-3 rounded-xl shadow-inner border border-gray-100">
+                        <img src="{{ asset('photos/case/case1/3.jpg') }}" class="w-full rounded-lg shadow-sm" alt="Secondary Violation 1">
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-xl shadow-inner border border-gray-100">
+                        <img src="{{ asset('photos/case/case1/4.jpg') }}" class="w-full rounded-lg shadow-sm" alt="Secondary Violation 2">
+                    </div>
+                </div>
+                <p class="text-center text-xs text-gray-400 uppercase font-bold tracking-widest">Figure 2.1 & 2.2: Secondary Page Analysis</p>
+
+                <div class="prose text-gray-600 max-w-none py-4 space-y-4">
+                    <p>
+                        In <strong>Figure 2.1</strong>, the system provides no immediate or appropriate response to a user action, failing to deliver <strong>Feedback</strong> (Saulynas, 2025). This crash state offers no recovery method, creating an undesirable situation for the user.
+                    </p>
+                    <p>
+                        In <strong>Figure 2.2</strong>, <strong>consistency</strong> is poor. The interface offers multiple non-working elements for the same feature. Because consistency requires similar operations to have similar functions (Saulynas, 2025), this confusion violates the safety usability goal.
+                    </p>
+                </div>
+
+                {{-- 2 Redesign Images --}}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-4 rounded-2xl shadow-xl border border-sage-50">
+                        <img src="{{ asset('photos/case/case1/6.jpg') }}" class="w-full rounded-xl" alt="Secondary Redesign 1">
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl shadow-xl border border-sage-50">
+                        <img src="{{ asset('photos/case/case1/7.jpg') }}" class="w-full rounded-xl" alt="Secondary Redesign 2">
+                    </div>
+                </div>
+                <p class="text-center text-xs text-sage-500 mt-4 uppercase font-bold tracking-widest">Figure 2.3 & 2.4: Secondary Page Solutions</p>
+                
+                <div class="bg-sage-50 p-8 rounded-3xl border border-sage-100 mt-12">
+                    <p class="text-gray-700 leading-relaxed italic">
+                        The redesign resolves these issues by introducing robust error handling and removing duplicate, non-working elements. By ensuring links work properly and providing recovery paths back to stable locations, the new interface improves <strong>safety</strong> through reliable feedback and predictable, consistent behavior.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        {{-- Final Note --}}
+        <section class="pt-20 border-t border-gray-100 text-center">
+            <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto italic">
+                The final synthesis ensures that all interaction points provide actionable feedback and restore user control, meeting the safety requirements of modern HCI standards.
+            </p>
+        </section>
+
+    </div>
+</main>
+@endsection

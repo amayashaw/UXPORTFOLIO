@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+    /* This is how you define Sage in Tailwind v4 */
+    --color-sage-50: #f4f7f4;
+    --color-sage-500: #6b8e73;
+    --color-sage-600: #54715a;
+    --color-sage-700: #455c4a;
+}
+
+/* These tell Tailwind where to look for your classes */
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";

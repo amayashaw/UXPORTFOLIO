@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'UI/UX Portfolio')</title>
+    
+    <style>
+        .project-card {
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+    
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    {{-- HEADER (NAVIGATION) - THIS IS THE ONLY LOCATION FOR THE NAVBAR --}}
+    <header class="shadow-md bg-white sticky top-0 z-10">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+            {{-- BRAND NAME / HOME LINK (FIXED to use direct URL) --}}
+            <a href="/" class="text-2xl font-bold text-sage-500 hover:text-sage-500 transition duration-150">
+                Amaya Shaw
+            </a>
+            
+            {{-- MAIN NAVIGATION LINKS --}}
+            <div class="space-x-8 text-lg">
+                <a href="{{ route('case-studies') }}" class="px-3 py-2 text-gray-700 hover:text-sage-500 font-medium">Case Studies</a>
+                <a href="{{ route('graphic-design') }}" class="px-3 py-2 text-gray-700 hover:text-sage-500 font-medium">Graphic Design</a>
+                <a href="{{ route('webpage-redesign') }}" class="px-3 py-2 text-gray-700 hover:text-sage-500 font-medium">Webpage Redesign</a>
+                <a href="{{ route('personal-projects') }}" class="px-3 py-2 text-gray-700 hover:text-sage-500 font-medium">Personal Projects</a>
+                <a href="{{ route('contact') }}" class="px-3 py-2 text-gray-700 hover:text-sage-500 font-medium">Contact Me</a>
+            </div>
+            
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        @yield('content')
+    </main>
+
+    {{-- FOOTER - SIMPLE AND CLEAN --}}
+  <footer class="bg-sage-50 py-10">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sage-600 text-sm">
+        &copy; {{ date('Y') }} <span class="font-bold">Amaya Shaw</span> • UX Designer & Product Thinker
+    </div>
+</footer>
+    
+</body>
+</html>
