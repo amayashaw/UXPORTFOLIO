@@ -29,7 +29,7 @@
 
             </div>
 
-            {{-- Placeholder Image --}}
+            {{-- Image --}}
             <div class="md:w-1/2 flex justify-center">
                 <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-300 rounded-full shadow-2xl flex items-center justify-center text-gray-600 text-center text-sm overflow-hidden">
                     <img src="{{ asset('photos/profile-photo.jpg') }}" alt="Amaya Shaw Profile Photo" class="w-full h-full object-cover">
