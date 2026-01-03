@@ -52,3 +52,8 @@ Route::get('/webpage-redesign/san-diego-coupons', function () {
 Route::get('/case-studies/hci-bibliography', function () {
     return view('projects.casestudies.hci-bibliography');
 })->name('hci-bibliography');
+
+Route::get('/portfolio', function () {
+    // We use dots to represent the folders: projects > personalprojects > portfolio
+    return view('projects.personalprojects.portfolio'); 
+})->name('portfolio');

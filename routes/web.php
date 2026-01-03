@@ -36,24 +36,30 @@ Route::get('/contact', function () {
     return view('contact-us');
 })->name('contact');
 
-// The first part is the URL in the browser
-// The second part 'projects.bsu-creative-work' tells Laravel: "Look in views/projects/"
+// 7. GRAPHIC DESIGN ROUTE
 Route::view('/graphic-design/bsu-creative-work', 'projects.graphicdesign.bsu-creative-work')->name('bsu-project');
 
+// 8. CLT ROUTE
 Route::get('/clt-brand-design', function () {
-    // Adding 'projects.' tells Laravel to look inside the projects folder
     return view('projects.graphicdesign.clt-brand-design'); 
 })->name('clt-design');
 
+// 9. WEBPAGE REDESIGN ROUTE
 Route::get('/webpage-redesign/san-diego-coupons', function () {
     return view('projects.webredesign.san-diego-coupons');
 })->name('san-diego-coupons');
 
+// 10. CASE STUDEIS ROUTE
 Route::get('/case-studies/hci-bibliography', function () {
     return view('projects.casestudies.hci-bibliography');
 })->name('hci-bibliography');
 
+// 11. PORTFOLIO ROUTE
 Route::get('/portfolio', function () {
-    // We use dots to represent the folders: projects > personalprojects > portfolio
     return view('projects.personalprojects.portfolio'); 
 })->name('portfolio');
+
+// 12. THANK YOU ROUTE
+Route::get('/thank-you', function () {
+    return view('thanks'); 
+})->name('thanks');
