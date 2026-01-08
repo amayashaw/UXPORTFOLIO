@@ -11,7 +11,8 @@
             {{-- Text Content --}}
             <div class="md:w-1/2 md:pr-12 mb-10 md:mb-0"> 
                 <h2 class="text-xl font-semibold text-sage-500 uppercase tracking-wider mb-2">
-                    UX Designer & Product Thinker
+                    {{-- Updated Title to match Footer consistency --}}
+                    UX/UI Designer & Visual Storyteller
                 </h2>
                 <h1 class="text-6xl md:text-7xl font-extrabold text-gray-900 leading-tight">
                     Hi, I'm Amaya Shaw.
@@ -22,9 +23,9 @@
                     for complex problems.
                 </p>
                 
-                {{-- Separator line: Wrapped in a flex container to center it --}}
-                <div class="flex justify-center mt-12">
-                    <div class="w-40 h-1 bg-sage-00 rounded"></div>
+                {{-- Separator line: Fixed the color class from sage-00 to sage-500 --}}
+                <div class="flex justify-start mt-12">
+                    <div class="w-40 h-1 bg-sage-500 rounded"></div>
                 </div>
 
             </div>
@@ -39,7 +40,7 @@
         </div>
     </section>
 
-  {{-- 2. PORTFOLIO CATEGORY HUB (Now using Images) --}}
+  {{-- 2. PORTFOLIO CATEGORY HUB --}}
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-gray-800 text-center mb-4">Explore My Work By Category</h2>
@@ -52,25 +53,25 @@
                 
                 {{-- Card 1: Case Studies --}}
                 <a href="{{ route('case-studies') }}" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.05] transition duration-300 text-center">
-                    <img src="{{ asset('images/categories/case-studies.jpg') }}" alt="Case Study Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
+                    <img src="{{ asset('photos/case/case1/4.jpg') }}" alt="Case Study Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
                     <h3 class="text-xl font-semibold text-gray-800">Case Studies</h3>
                 </a>
 
                 {{-- Card 2: Webpage Redesigns --}}
                 <a href="{{ route('webpage-redesign') }}" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.05] transition duration-300 text-center">
-                    <img src="{{ asset('images/categories/redesigns.jpg') }}" alt="Redesigns Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
+                    <img src="{{ asset('photos/web/web1/4.png') }}" alt="Redesigns Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
                     <h3 class="text-xl font-semibold text-gray-800">Redesigns</h3>
                 </a>
                 
                 {{-- Card 3: Personal Projects --}}
                 <a href="{{ route('personal-projects') }}" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.05] transition duration-300 text-center">
-                    <img src="{{ asset('images/categories/personal-projects.jpg') }}" alt="Personal Projects Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
+                    <img src="{{ asset('photos/personal/portfolio.png') }}" alt="Personal Projects Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
                     <h3 class="text-xl font-semibold text-gray-800">Personal Projects</h3>
                 </a>
 
                 {{-- Card 4: Graphic Design --}}
                 <a href="{{ route('graphic-design') }}" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.05] transition duration-300 text-center">
-                    <img src="{{ asset('images/categories/graphic-design.jpg') }}" alt="Graphic Design Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
+                    <img src="{{ asset('photos/clt/clt1/2.jpg') }}" alt="Graphic Design Category" class="h-24 w-24 object-cover mb-3 rounded-md border border-gray-200">
                     <h3 class="text-xl font-semibold text-gray-800">Graphic Design</h3>
                 </a>
                 

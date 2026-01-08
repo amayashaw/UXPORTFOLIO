@@ -7,7 +7,7 @@
     <div class="text-center max-w-3xl mx-auto mb-12">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">Let's Connect</h1>
         <p class="text-xl text-gray-600 leading-relaxed">
-            I'm always open to discussing new opportunities, collaborations, or just talking shop about UX, design, and development.
+      Ready to work together? Let’s turn "what if" into what’s next.
         </p>
     </div>
 
@@ -28,10 +28,14 @@
                 <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-sage-400 focus:border-sage-400 transition-all outline-none"></textarea>
             </div>
 
-            <div class="pt-4">
-                <button type="submit" id="submit-button" class="w-full bg-sage-500 text-white font-bold py-4 px-6 rounded-lg hover:bg-sage-600 transition duration-300 shadow-lg uppercase tracking-widest text-sm">
-                    Send Message
-                </button>
+      <div class="mt-8">
+    <button type="submit" 
+        class="w-full bg-indigo-800 text-white font-bold uppercase tracking-[0.2em] text-[11px] py-4 rounded-xl 
+               hover:bg-indigo-700 hover:shadow-2xl hover:shadow-indigo-500/30 
+               transition-all duration-500 transform hover:-translate-y-1 active:scale-[0.98]">
+        Send Message
+    </button>
+</div>
             </div>
             <p id="form-status" class="text-center mt-4 text-sm font-medium"></p>
         </form>

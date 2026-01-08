@@ -2,126 +2,129 @@
 
 @section('title', 'CLT Brand Design | Amaya Shaw')
 
+@section('content')
 <style>
-    /* 1. FIX NAVBAR SQUISHING */
-    nav a, .nav-item {
-        white-space: nowrap !important;
-    }
+    /* 1. SMOOTH SCROLLING & MOMENTUM */
+    html { scroll-behavior: smooth; }
 
-    /* 2. SCROLL ANIMATION */
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(50px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .scroll-spawn {
+    /* 2. REVEAL ANIMATION (More fluid than before) */
+    .reveal {
         opacity: 0;
-        animation: fadeInUp 0.8s ease-out forwards;
-        animation-timeline: view();
-        animation-range: entry 5% cover 25%;
+        transform: translateY(30px) scale(0.95);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 
-    /* 3. SAGE BRAND COLORS */
-    .border-sage { border: 4px solid #556b55 !important; }
-    .text-sage-dark { color: #556b55; }
+    /* 3. FLOATING MASK EFFECT */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 </style>
 
-@section('content')
+<main class="bg-black text-white"> {{-- Dark mode makes images POP --}}
 
-{{-- THE ENTIRE PAGE IS NOW WRAPPED IN A CONSISTENT MAX-WIDTH CONTAINER --}}
-{{-- Using max-w-6xl to match the 'gap-x-56' rhythm --}}
-<div class="max-w-6xl mx-auto px-4 py-12">
-    
-    {{-- BACK BUTTON: Now flush with the grid --}}
-    <div class="mb-12">
-        <a href="{{ route('graphic-design') }}" class="group inline-flex items-center text-sage-500 font-bold hover:text-gray-900 transition duration-150">
-            <span class="mr-2 transition-transform group-hover:-translate-x-1">←</span> 
-            Back to Gallery
-        </a>
-    </div>
+    {{-- SECTION 1: FULL SCREEN CINEMATIC HERO --}}
+    <section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        {{-- Background Video or Image --}}
+        <div class="absolute inset-0 z-0">
+            <img src="{{ asset('photos/clt/clt2/1.jpg') }}" class="w-full h-full object-cover opacity-60 scale-110 transition-transform duration-[10s] hover:scale-100">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black"></div>
+        </div>
 
-    {{-- HEADER: Now flush with the grid --}}
-    <header class="mb-32">
-        <h1 class="text-5xl md:text-7xl font-black mb-6 text-gray-900 tracking-tighter uppercase leading-[0.85]">
-            Cured Leaves <br> Tea Brand Design
-        </h1>
-        <p class="text-xl text-gray-500 max-w-xl leading-relaxed font-medium">
-            A comprehensive look at the visual identity developed for CLT, focusing on cohesive digital storytelling and high-energy social assets.
-        </p>
-    </header>
+        <div class="relative z-10 text-center px-4 max-w-5xl">
+            <span class="text-sage-400 font-bold uppercase tracking-[0.5em] mb-4 block reveal">Identity Design</span>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter mb-8 reveal">Cured Leaves</h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed reveal">
+                A visual heartbeat for a brand rooted in storytelling and high-energy motion.
+            </p>
+        </div>
+        
+        {{-- Scroll Indicator --}}
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
 
-    {{-- SECTION 1: SQUARE POSTS --}}
-    {{-- Changed to gap-x-56 --}}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-56 gap-y-40 mb-40">
-        @for ($i = 1; $i <= 6; $i++)
-            <div class="scroll-spawn">
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transition-transform duration-500 hover:scale-[1.02]">
-                    <img src="{{ asset('photos/clt1/' . $i . '.jpg') }}" 
-                         class="w-full aspect-square object-cover" alt="CLT Square {{ $i }}">
+    {{-- SECTION 2: THE "FLOATING" GRID --}}
+    {{-- This uses a background image that scrolls at a different speed (Parallax feel) --}}
+    <section class="relative py-40 px-6">
+        {{-- Background Image Texture --}}
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+            <img src="{{ asset('photos/clt/clt1/1.jpg') }}" class="w-full h-full object-cover sticky top-0">
+        </div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                {{-- Large Main Image --}}
+                <div class="md:col-span-7 reveal">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+                        <img src="{{ asset('photos/clt/clt1/2.jpg') }}" class="w-full h-auto transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                </div>
+                
+                {{-- Overlapping Text Box --}}
+                <div class="md:col-span-5 md:-ml-20 z-20 reveal">
+                    <div class="glass-card p-10 rounded-3xl shadow-2xl">
+                        <h2 class="text-3xl font-bold mb-6">Digital Storytelling</h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Every asset is designed to capture attention in 0.5 seconds. We utilized a rich, earth-toned palette to reflect the "Cured" nature of the brand.
+                        </p>
+                    </div>
                 </div>
             </div>
-        @endfor
-    </div>
-</div>
+        </div>
+    </section>
 
-{{-- === SECTION 2: THE QUOTE BOX (Remains Full Width) === --}}
-<section class="w-full scroll-spawn border-sage bg-white py-24 md:py-32 my-20">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-5xl font-extrabold text-sage-dark leading-tight uppercase tracking-tighter max-w-4xl mx-auto">
-            "I intentionally create based on the unique ideals and visual heartbeat of every brand."
-        </h2>
-    </div>
-</section>
+    {{-- SECTION 3: THE DYNAMIC QUOTE --}}
+    <section class="py-60 bg-fixed bg-cover bg-center relative" style="background-image: url('{{ asset('photos/clt/clt2/3.jpg') }}');">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-7xl font-black leading-tight uppercase tracking-tighter max-w-5xl mx-auto reveal">
+                "Unique visual <span class="text-sage-400 italic">heartbeat</span> for every brand."
+            </h2>
+        </div>
+    </section>
 
-{{-- BOTTOM CONTAINER --}}
-{{-- Using max-w-7xl here because Portraits need a bit more width to handle the gap-x-56 --}}
-<div class="max-w-7xl mx-auto px-4 py-12">
-    {{-- SECTION 3: PORTRAIT ASSETS & VIDEOS --}}
-    {{-- Changed to gap-x-56 --}}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-56 gap-y-40 mb-32">
-        
-        {{-- ROW 1 --}}
-        <div class="scroll-spawn">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <img src="{{ asset('photos/clt2/1.jpg') }}" class="w-full aspect-[9/16] object-cover">
+    {{-- SECTION 4: MASONRY STYLE SHOWCASE --}}
+    <section class="py-40 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                @for ($i = 3; $i <= 6; $i++)
+                <div class="break-inside-avoid reveal">
+                    <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-sage-500/50 transition duration-500">
+                        <img src="{{ asset('photos/clt/clt1/' . $i . '.jpg') }}" class="w-full h-auto">
+                    </div>
+                </div>
+                @endfor
+
+                {{-- Video Card --}}
+                <div class="break-inside-avoid reveal">
+                    <div class="rounded-2xl overflow-hidden aspect-[9/16] bg-gray-900 border border-white/5">
+                        <video src="{{ asset('videos/clt/1.mp4') }}" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="scroll-spawn">
-            <div class="bg-black rounded-2xl shadow-2xl overflow-hidden h-full min-h-[400px]">
-                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
-                    <source src="{{ asset('videos/clt/1.mp4') }}" type="video/mp4">
-                </video>
-            </div>
-        </div>
+</main>
 
-        {{-- ROW 2 --}}
-        <div class="scroll-spawn">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <img src="{{ asset('photos/clt2/2.jpg') }}" class="w-full aspect-[9/16] object-cover">
-            </div>
-        </div>
+<script>
+    // REVEAL ON SCROLL SCRIPT
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
 
-        <div class="scroll-spawn">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <img src="{{ asset('photos/clt2/3.jpg') }}" class="w-full aspect-[9/16] object-cover">
-            </div>
-        </div>
-
-        {{-- ROW 3 --}}
-        <div class="scroll-spawn">
-            <div class="bg-black rounded-2xl shadow-2xl overflow-hidden h-full min-h-[400px]">
-                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
-                    <source src="{{ asset('videos/clt/2.mp4') }}" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-        <div class="scroll-spawn">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <img src="{{ asset('photos/clt2/4.jpg') }}" class="w-full aspect-[9/16] object-cover">
-            </div>
-        </div>
-
-    </div>
-</div>
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 @endsection
