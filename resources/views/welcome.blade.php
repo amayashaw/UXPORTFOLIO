@@ -19,7 +19,7 @@
   	<br/>
             <div class="flex flex-col md:flex-row justify-between items-end gap-12 reveal">
                 <p class="text-xl md:text-2xl text-gray-500 max-w-xl leading-relaxed">
-                    UX/UI Designer and Visual Storyteller creating <span class="text-gray-900 font-semibold underline decoration-gray-300">frictionless digital experiences</span> through research-backed design.
+                    Designing intentionally for <span class="text-gray-900 font-medium underline decoration-gray-300 underline-offset-8">intuitive flow and structural impact.</span> I build beautiful digital experiences that are rooted in evidence, elevated by narrative, and <span class="text-gray-900 font-medium underline decoration-gray-300 underline-offset-8">designed for the people who use them.</span> 
                 </p>
                 <div class="flex gap-4">
                    <div class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center animate-bounce text-gray-400">
@@ -29,8 +29,22 @@
             </div>
         </div>
     </section>
+    
+    {{-- 2. GRID TITLE --}}
+<section class="w-full py-32 bg-gradient-to-b from-transparent to-white">
+    
+    <div class="max-w-3xl mx-auto px-8 md:px-0">
+        
+        <h2 class="text-4xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.2]">
+            Check out my work—<br class="hidden md:block"> 
+            where <span class="italic font-serif text-gray-800">intentionality.</span> meets
+            <span class="italic font-serif text-gray-800"> aesthetic.</span>
+        </h2>
 
-    {{-- 2. THE COMPACT ICON GRID --}}
+    </div>
+</section>
+
+    {{-- 3. THE COMPACT ICON GRID --}}
 <section class="py-24 px-6 relative">
     <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

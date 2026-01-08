@@ -7,7 +7,7 @@
     <div class="text-center max-w-3xl mx-auto mb-12">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">Let's Connect</h1>
         <p class="text-xl text-gray-600 leading-relaxed">
-      Ready to work together? Let’s turn "what if" into what’s next.
+      Ready to work together? Let’s turn "what if" into what’s next!
         </p>
     </div>
 
