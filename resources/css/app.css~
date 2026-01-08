@@ -1,4 +1,4 @@
-@import "tailwindcss";
+ @import "tailwindcss";
 
 @theme {
   --color-sage-50: #f4f7f4;
@@ -37,7 +37,7 @@
     z-index: 50;
 }
 
-/* 4. GLASSMORPHISM */
+/* 4. GLASSMORPHISMM */
 .glass {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(15px);
