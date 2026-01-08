@@ -37,7 +37,7 @@
         </div>
     </nav>
 
-    {{-- Added pt-28 to push content below the navbar --}}
+    {{-- Added pt-28 to push content below the navbar!! --}}
     <main class="pt-28">
         @yield('content')
     </main>

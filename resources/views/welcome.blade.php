@@ -30,7 +30,7 @@
         </div>
     </section>
     
-    {{-- 2. GRID TITLE --}}
+    {{-- 2. GRID TITLE !!--}}
 <section class="w-full py-32 bg-gradient-to-b from-transparent to-white">
     
     <div class="max-w-3xl mx-auto px-8 md:px-0">
