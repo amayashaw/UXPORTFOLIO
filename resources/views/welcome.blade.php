@@ -37,7 +37,7 @@
         
         <h2 class="text-4xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.2]">
             Check out my work—<br class="hidden md:block"> 
-            where <span class="italic font-serif text-gray-800">intentionality.</span> meets
+            where <span class="italic font-serif text-gray-800">intentionality</span> meets
             <span class="italic font-serif text-gray-800"> aesthetic.</span>
         </h2>
 
