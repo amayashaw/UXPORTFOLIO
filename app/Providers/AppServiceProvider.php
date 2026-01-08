@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL; // This tells Laravel how to handle URLs
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,9 +18,11 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-   public function boot(): void
-{
-    if (app()->environment('production')) {
-        URL::forceScheme('https');
+    public function boot(): void
+    {
+        // This forces all links to use HTTPS in production to fix the "Mixed Content" error
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
-}
+} 
