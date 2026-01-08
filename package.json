@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build"
 }
-    },
+    }
     "devDependencies": {
         "@tailwindcss/postcss": "^4.1.18",
         "@tailwindcss/vite": "^4.0.0",
