@@ -49,16 +49,16 @@
     <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            {{-- PROJECT 1: CASE STUDIES --}}
+            {{-- PROJECT 1: UX RESEARCH --}}
             <div class="reveal">
-                <a href="/case-studies" class="group block p-10 rounded-[2rem] glass border border-white/40 hover:border-indigo-300 transition-all duration-700">
+                <a href="/ux-research" class="group block p-10 rounded-[2rem] glass border border-white/40 hover:border-indigo-300 transition-all duration-700">
                     <div class="w-16 h-16 mb-8 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-800 group-hover:scale-110 transition-transform duration-500">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
                     <div class="flex justify-between items-end">
                         <div>
-                            <h3 class="text-2xl font-bold tracking-tighter uppercase">Case Studies</h3>
-                            <p class="text-gray-500 uppercase text-[10px] tracking-widest font-bold mt-2">UX Research & Strategy</p>
+                            <h3 class="text-2xl font-bold tracking-tighter uppercase">UX Research</h3>
+                            <p class="text-gray-500 uppercase text-[10px] tracking-widest font-bold mt-2">Case Studies & Strategy</p>
                         </div>
                         <span class="w-10 h-10 rounded-full border border-black flex items-center justify-center group-hover:bg-[#3730a3] group-hover:border-[#3730a3] group-hover:text-white transition-all duration-500">→</span>
                     </div>

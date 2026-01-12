@@ -34,7 +34,7 @@
             <a href="/" class="hover:opacity-50 transition">Home</a>
             <a href="{{ route('webpage-redesign') }}" class="hover:opacity-50 transition">Web Design</a>
             <a href="{{ route('personal-projects') }}" class="hover:opacity-50 transition">Projects</a>    
-            <a href="/case-studies" class="hover:opacity-50 transition">UX Research</a>
+            <a href="{{ route('ux-research') }}" class="hover:opacity-50 transition">UX Research</a>
             <a href="/graphic-design" class="hover:opacity-50 transition">Graphic Design</a>
             <a href="{{ route('contact') }}" class="bg-black text-white px-5 py-2 rounded-full hover:bg-indigo-800 transition">Contact</a>
         </div>
@@ -58,7 +58,7 @@
             <a href="/" class="hover:text-indigo-600 transition">Home</a>
             <a href="{{ route('webpage-redesign') }}" class="hover:text-indigo-600 transition">Web Design</a>
             <a href="{{ route('personal-projects') }}" class="hover:text-indigo-600 transition">Projects</a>
-            <a href="/case-studies" class="hover:text-indigo-600 transition">UX Research</a>
+            <a href="{{ route('ux-research') }}" class="hover:text-indigo-600 transition">UX Research</a>
             <a href="/graphic-design" class="hover:text-indigo-600 transition">Graphic Design</a>
             <a href="{{ route('contact') }}" class="bg-black text-white py-4 rounded-full transition">Contact Me</a>
         </div>

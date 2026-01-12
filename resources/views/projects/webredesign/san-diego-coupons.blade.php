@@ -1,47 +1,149 @@
 @extends('layouts.app')
 
-@section('title', 'San Diego Coupons Redesign')
+@section('title', 'Project: San Diego Coupons | Amaya Shaw')
 
 @section('content')
-<main class="container mx-auto px-4 py-12">
-    <div class="mb-8">
-        <a href="{{ route('webpage-redesign') }}" class="text-sage-500 font-bold">← Back to Redesigns</a>
-    </div>
-
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">San Diego Coupons Redesign</h1>
-    <p class="text-xl text-gray-600 mb-12">Fundamentals of HCI Class Lab</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-center">
-        <div>
-            <h2 class="text-2xl font-bold mb-4">The Challenge</h2>
-            <p class="text-gray-600 leading-relaxed">
-                The reason that users were unable to easily understand the point of the site until they started clicking around shows a lack of familiarity in the designs used to urge users to click in the right places.
-            </p>
+<main class="bg-white min-h-screen">
+    {{-- 1. EDITORIAL HERO SECTION --}}
+    <section class="relative pt-44 pb-20 overflow-hidden">
+        {{-- Muted Mesh Gradient Background --}}
+        <div class="absolute inset-0 -z-10 bg-white">
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-50/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4"></div>
+            <div class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-50/20 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4"></div>
         </div>
-        <div class="bg-white p-4 shadow-lg rounded-xl">
-            <img src="{{ asset('photos/web/web1/1.png') }}" class="w-full rounded-lg" alt="Original Layout">
-            <p class="text-center text-sm text-gray-400 mt-2 italic">Original Layout: Unfamiliar and confusing</p>
-        </div>
-    </div>
 
-    <div class="border-t border-gray-200 pt-20">
-        <h2 class="text-3xl font-bold mb-6">The Solution: Enhancing Learning</h2>
-        <p class="text-lg text-gray-600 mb-12">
-            My redesign enhances learning by reorganizing and repositioning the hotbar. This new layout feels more familiar and intuitive to users, encouraging them to interact with the hotbar and easily navigate the website.
-        </p>
+        <div class="container mx-auto px-6">
+            <div class="reveal">
+                {{-- Breadcrumb --}}
+                <nav class="mb-16">
+                    <a href="{{ route('webpage-redesign') }}" class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 hover:text-indigo-600 transition">
+                        <span class="mr-2 transform group-hover:-translate-x-2 transition-transform">←</span> Back to Redesigns
+                    </a>
+                </nav>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-4 shadow-lg rounded-xl">
-                <img src="{{ asset('photos/web/web1/2.png') }}" class="w-full rounded-lg" alt="Redesign Step 1">
-                <p class="mt-4 font-semibold">01. Familiar Positioning</p>
-                <p class="text-gray-500 text-sm">Standardizing the hotbar placement based on common user mental models.</p>
+                {{-- The Header Grid --}}
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+                    <div class="lg:col-span-9">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-4 block">Webpage Redesign — 2024</span>
+                        <h1 class="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase leading-[0.8] text-gray-900">
+                            San Diego <br> 
+                            <span class="text-gray-900/90">Coupons</span>
+                        </h1>
+                    </div>
+
+                    <div class="lg:col-span-3 lg:pt-24">
+                        <div class="border-l-2 border-gray-100 pl-6">
+                            <p class="text-gray-500 text-lg md:text-xl font-light leading-snug italic">
+                                Redesigning for <span class="font-bold text-gray-900">Immediate Clarity</span> through standardized navigation and user mental models.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Project Stat Bar --}}
+                <div class="mt-24 pt-10 border-t border-gray-100 grid grid-cols-2 lg:grid-cols-4 gap-12">
+                  
+                    <div>
+                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-3">Role</h4>
+                        <p class="text-xs md:text-sm font-bold text-gray-700 uppercase tracking-tight">UI/UX Design</p>
+                    </div>
+                    <div>
+                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-3">Focus</h4>
+                        <p class="text-xs md:text-sm font-bold text-gray-700 uppercase tracking-tight">Mental Models</p>
+                    </div>
+                    <div>
+                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-3">Context</h4>
+                        <p class="text-xs md:text-sm font-bold text-gray-700 uppercase tracking-tight">HCI Class Lab</p>
+                    </div>
+                    <div>
+                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-3">Outcome</h4>
+                        <p class="text-xs md:text-sm font-bold text-indigo-400 uppercase tracking-[0.2em]">Strategy Proposal</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white p-4 shadow-lg rounded-xl">
-                <img src="{{ asset('photos/web/web1/3.png') }}" class="w-full rounded-lg" alt="Redesign Step 2">
-                <p class="mt-4 font-semibold">02. Organized Categorization</p>
-                <p class="text-gray-500 text-sm">Grouping coupon types under "Add a Coupon" to improve discoverability.</p>
+        </div>
+    </section>
+
+    {{-- 2. THE CHALLENGE --}}
+    <section class="py-32 bg-white reveal">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-8">The Challenge</h2>
+                    <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-10 leading-[0.9] text-gray-900">
+                        Understanding <br> The "Why".
+                    </h3>
+                    <p class="text-xl text-gray-500 leading-relaxed font-light mb-8">
+                        The original site lacked <span class="font-bold text-gray-900">familiarity</span>. Users struggled to understand the site’s purpose because it deviated too far from established e-commerce conventions.
+                    </p>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-gray-50 p-4 rounded-[40px] border border-gray-100 shadow-sm">
+                        <img src="{{ asset('photos/web/web1/1.png') }}" class="w-full rounded-[30px]" alt="Original Layout">
+                    </div>
+                    <p class="text-center text-[10px] text-gray-400 uppercase font-bold tracking-widest mt-6">Fig 1.1: Original Unfamiliar Layout</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    {{-- 3. THE SOLUTION (Editorial Grid) --}}
+    <section class="py-32 bg-gray-50/50 border-y border-gray-100 reveal">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mb-24">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.5em] text-indigo-600 mb-8">The Solution</h2>
+                <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-gray-900 mb-10 leading-none">
+                    Enhancing Learning Through <br> Logical Hierarchy.
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+                {{-- Solution 01 --}}
+                <div class="space-y-8">
+                    <div class="bg-white p-3 rounded-[40px] shadow-xl border border-gray-100 overflow-hidden">
+                        <img src="{{ asset('photos/web/web1/2.png') }}" class="w-full rounded-[30px]" alt="Redesign Step 1">
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <span class="text-gray-900 font-black text-4xl leading-none">01</span>
+                        <div>
+                            <h4 class="text-xl font-black uppercase tracking-tight text-gray-900 mb-2">Familiar Positioning</h4>
+                            <p class="text-gray-500 font-light leading-relaxed">
+                                Standardized the navigation hotbar based on e-commerce mental models, allowing users to find tools instantly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Solution 02 --}}
+                <div class="space-y-8 lg:mt-24">
+                    <div class="bg-white p-3 rounded-[40px] shadow-xl border border-gray-100 overflow-hidden">
+                        <img src="{{ asset('photos/web/web1/3.png') }}" class="w-full rounded-[30px]" alt="Redesign Step 2">
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <span class="text-gray-900 font-black text-4xl leading-none">02</span>
+                        <div>
+                            <h4 class="text-xl font-black uppercase tracking-tight text-gray-900 mb-2">Organized Hierarchy</h4>
+                            <p class="text-gray-500 font-light leading-relaxed">
+                                Grouped coupon categories into a single, intuitive "Add" flow to reduce cognitive load and visual noise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- 4. NEXT PROJECT NAVIGATION --}}
+    <section class="py-40 bg-white text-center reveal">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-300 mb-12 block">Next Up</span>
+            <a href="#" class="group block">
+                <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter text-gray-900 group-hover:text-indigo-600 transition-colors duration-500">
+                    Coming Soon <span class="inline-block transform group-hover:translate-x-4 transition-transform duration-500">→</span>
+                </h2>
+            </a>
+        </div>
+    </section>
 </main>
 @endsection

@@ -3,15 +3,29 @@
 @section('title', 'Personal Projects')
 
 @section('content')
-<main class="container mx-auto px-4 py-16">
-    <div class="max-w-4xl">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 leading-tight">Personal Projects</h1>
-        <p class="mb-12 text-xl text-gray-600 leading-relaxed">
-            A collection of self-initiated projects, UX challenges, and explorations demonstrating my passion for design outside of formal work.
-        </p>
-    </div>
+<main class="container mx-auto px-4">
+    
+   {{-- 1.  HEADER SECTION --}}
+    {{-- Changed from pt-44 to pt-32 to tighten the top gap --}}
+    <section class="pt-32 pb-20 max-w-7xl mx-auto">
+        <div class="reveal">
+            {{-- Category Label --}}
+            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-indigo-600 mb-4 block">Portfolio</span>
+            
+            {{-- Main Page Title --}}
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter uppercase mb-6 leading-[0.85] text-gray-900">
+                Personal <br> Projects
+            </h1>
+            
+            {{-- Subheader --}}
+            <p class="text-gray-500 text-lg md:text-xl max-w-2xl font-light leading-relaxed">
+                            A collection of self-initiated projects, UX challenges, and explorations demonstrating my passion for design outside of formal work.
+            </p>
+        </div>
+    </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    {{-- 2. PROJECT GRID (Your original code starts here) --}}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-40">
         
         {{-- FEATURED: MAIN PORTFOLIO PAGE --}}
         <div class="flex flex-col bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
@@ -34,28 +48,28 @@
             </div>
         </div>
 
-        {{-- UPCOMING PROJECT SLOT 1 --}}
-        <div class="card-upcoming flex flex-col items-center justify-center min-h-[450px]">
-            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+        {{-- Upcoming Cards --}}
+        <div class="card-upcoming flex flex-col items-center justify-center min-h-[450px] bg-gray-50/50 rounded-3xl border-2 border-dashed border-gray-100">
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <svg class="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
             </div>
             <h2 class="text-xl font-bold text-gray-400 mb-2 uppercase tracking-widest">Upcoming</h2>
-            <p class="text-gray-400 text-sm">New project in progress</p>
+            <p class="text-gray-400 text-sm">New redesign in progress</p>
         </div>
 
-        {{-- UPCOMING PROJECT SLOT 2 --}}
-        <div class="card-upcoming flex flex-col items-center justify-center min-h-[450px]">
-            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+        <div class="card-upcoming flex flex-col items-center justify-center min-h-[450px] bg-gray-50/50 rounded-3xl border-2 border-dashed border-gray-100">
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <svg class="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
             </div>
             <h2 class="text-xl font-bold text-gray-400 mb-2 uppercase tracking-widest">Upcoming</h2>
-            <p class="text-gray-400 text-sm">New research in progress</p>
+            <p class="text-gray-400 text-sm">New redesign in progress</p>
         </div>
 
     </div>
 </main>
 @endsection
+

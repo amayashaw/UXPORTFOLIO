@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Webpage Redesigns')
+@section('title', 'UX Research')
 
 @section('content')
 <main class="container mx-auto px-4">
